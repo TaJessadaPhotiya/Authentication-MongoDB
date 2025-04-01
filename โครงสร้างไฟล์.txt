@@ -1,0 +1,37 @@
+/my-auth-backend
+│
+├── /middleware
+│   └── authMiddleware.js       
+├── /controllers
+│   └── authController.js       # ฟังก์ชันการลงทะเบียนและเข้าสู่ระบบ
+├── /models
+│   └── User.js                 # Model สำหรับผู้ใช้
+├── /routes
+│   └── authRoutes.js           # Route สำหรับการลงทะเบียนและเข้าสู่ระบบ
+├── /node_modules               # โฟลเดอร์ที่ npm ติดตั้ง dependencies
+├── .env                        # เก็บคีย์ลับและการตั้งค่า (เช่น MongoDB URI, JWT secrets)
+├── package.json                # ค่าคอนฟิกและ dependencies ของโปรเจกต์
+├── server.js                   # จุดเริ่มต้นของ Server Express
+└── package-lock.json           # รายละเอียดการติดตั้ง dependencies
+
+############################################################################################################################
+
+/my-auth-frontend
+│
+├── /public
+│   └── index.html              # ไฟล์ HTML หลัก
+├── /src
+│   ├── /components
+│   │   └── Navbar.jsx          # Component สำหรับแถบเมนู
+│   ├── /pages
+│   │   ├── Home.jsx           # หน้า Home
+│   │   ├── Login.jsx           # หน้า Login
+│   │   └── Register.jsx        # หน้า Register
+│   ├── /App.jsx                # คอนฟิก Routing และ component หลัก
+│   ├── /index.css              # สไตล์หลักของ Tailwind CSS
+│   ├── /main.jsx               # จุดเริ่มต้นของ React
+│   └── /tailwind.config.js      # ค่าคอนฟิกของ Tailwind CSS
+├── /node_modules               # โฟลเดอร์ที่ npm ติดตั้ง dependencies
+├── package.json                # ค่าคอนฟิกและ dependencies ของโปรเจกต์
+├── tailwind.config.js          # ค่าคอนฟิกของ Tailwind CSS
+└── package-lock.json           # รายละเอียดการติดตั้ง dependencies
