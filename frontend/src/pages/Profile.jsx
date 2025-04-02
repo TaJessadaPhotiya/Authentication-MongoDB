@@ -234,7 +234,7 @@ function Profile() {
                     สิทธิ์การใช้งาน
                   </label>
                   <p className="mt-1 text-lg font-medium text-gray-800 capitalize">
-                    {userData.role === "admin" ? "ผู้ดูแลระบบ" : "ผู้ใช้ทั่วไป"}
+                    {userData.role === "admin" ? "admin" : "user"}
                   </p>
                 </div>
               </div>

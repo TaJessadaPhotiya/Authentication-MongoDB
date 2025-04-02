@@ -172,7 +172,7 @@ const Login = () => {
 
               <div className="text-sm">
                 <a
-                  href="forgot-password"
+                  href="/"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
                   ลืมรหัสผ่าน?
