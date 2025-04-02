@@ -8,13 +8,17 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ["user", "admin"], default: "user" },
 });
 
+// Hash รหัสผ่านก่อนบันทึกลง Database
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
-  this.password = await bcrypt.hash(this.password, 10);
+  const salt = await bcrypt.genSalt(12); // ใช้ salt 12 รอบ
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
 
-userSchema.methods.comparePassword = function (password) {
-  return bcrypt.compare(password, this.password);
+// ตรวจสอบรหัสผ่าน
+userSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
 };
 
 module.exports = mongoose.model("User", userSchema);
